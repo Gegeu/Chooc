@@ -1,30 +1,54 @@
 import React from 'react';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import {StyleSheet, View, Text } from 'react-native';
 
 export default function Repository({ data }){
     return (
       <View style={styles.container}>
-        <Text style={styles.name}>
-            {data.name}
-        </Text>
-        <Text style={styles.descripton}>
-            {data.descripton}
-        </Text>
-        
+        <Text style={styles.name}>{data.name}</Text>
+        <Text style={styles.descripton}>{data.description}</Text>
+
         <View style={styles.stats}>
-            <View style={styles.stat}>
-                <Ionicons name="ios-star" size={16} color="#333" />
-                <Text style={styles.statCount}>{data.stars}</Text>
-            </View>
-        </View>
-        <View style={styles.stats}>
-            <View style={styles.stat}>
-                <Ionicons name="ios-airplane" size={16} color="#333" />
-                <Text style={styles.statCount}>{data.forks}</Text>
-            </View>
+          <View style={styles.stat}>
+            <Ionicons name="ios-calendar" size={16} color="#333" />
+            <Text style={styles.statCount}>{data.stars}</Text>
+          </View>
+          <View style={styles.stat}>
+            <Ionicons name="ios-cash" size={16} color="#333" />
+            <Text style={styles.statCount}>{data.forks}</Text>
+          </View>
         </View>
       </View>
+
+         /* <View style={styles.container}>
+         <Text style={styles.name}>
+             {data.name}
+         </Text>
+         <Text style={styles.descripton}>
+             {data.descripton}
+         </Text>
+        
+         <View style={styles.stats}>
+             <View style={styles.stat}>
+                 <Ionicons name="ios-star" size={16} color="#333" />
+                 <Text style={styles.statCount}>{data.stars}</Text>
+             </View>
+         </View>
+         <View style={styles.stats}>
+             <View style={styles.stat}>
+                 <Ionicons name="ios-airplane" size={16} color="#333" />
+                 <Text style={styles.statCount}>{data.forks}</Text>
+             </View>
+         </View>
+       </View> */
+
+
+
+  /* <Refresh onPress={onRefresh}>
+    <Icon name="refresh" color="#7159c1" size={16} />
+    <RefreshText>ATUALIZAR</RefreshText>
+  </Refresh> */
+
   
     )
   }
@@ -56,7 +80,7 @@ export default function Repository({ data }){
     },
 
     stat: {
-        
+        flexDirection: "row",
         marginRight: 15,
         alignItems: 'center'
     },
